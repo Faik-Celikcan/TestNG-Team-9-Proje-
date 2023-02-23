@@ -6,9 +6,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import pages.HubcomfyHomePage;
-import pages.HubcomfyMyAccount;
-import pages.HubcomfyStorePage;
+import pages.US18HomePage;
+import pages.US18MyAccount;
+import pages.US18StorePage;
 import pages.US7HomePage;
 
 
@@ -21,9 +21,9 @@ import java.util.Date;
 import static org.testng.AssertJUnit.assertFalse;
 import static org.testng.AssertJUnit.assertTrue;
 public class ReusableMethods {
-    static HubcomfyHomePage HubcomfyHomePage = new HubcomfyHomePage();
-    static HubcomfyMyAccount HubcomfyMyAccount = new HubcomfyMyAccount();
-    static HubcomfyStorePage HubcomfyStorePage = new HubcomfyStorePage();
+    static US18HomePage US18HomePage = new US18HomePage();
+    static US18MyAccount US18MyAccount = new US18MyAccount();
+    static US18StorePage US18StorePage = new US18StorePage();
 
     static US7HomePage us7HomePage=new US7HomePage();
     static Actions actions=new Actions(Driver.getDriver());
@@ -89,13 +89,13 @@ public class ReusableMethods {
 
     public static void loginAsWendor() {
         Driver.getDriver().get(ConfigReader.getProperty("url"));
-        HubcomfyHomePage.signIn.click();
+        US18HomePage.signIn.click();
         waitFor(3);
-        HubcomfyHomePage.username.sendKeys(ConfigReader.getProperty("vendor_email"));
+        US18HomePage.username.sendKeys(ConfigReader.getProperty("vendor_email"));
         waitFor(2);
-        HubcomfyHomePage.password.sendKeys(ConfigReader.getProperty("vendor_password"));
+        US18HomePage.password.sendKeys(ConfigReader.getProperty("vendor_password"));
         waitFor(2);
-        HubcomfyHomePage.submit.click();
+        US18HomePage.submit.click();
 
     }
 
@@ -104,13 +104,13 @@ public class ReusableMethods {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
         waitFor(2);
-        HubcomfyHomePage.myAccount.click();
+        US18HomePage.myAccount.click();
         waitFor(2);
-        HubcomfyMyAccount.storeManager.click();
+        US18MyAccount.storeManager.click();
         waitFor(2);
-        HubcomfyStorePage.products.click();
+        US18StorePage.products.click();
         waitFor(2);
-        HubcomfyStorePage.addNew.click();
+        US18StorePage.addNew.click();
         waitFor(2);
 
     }
@@ -142,46 +142,24 @@ public class ReusableMethods {
                 .sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN).perform();
     }
 
-
     public static void us7homePg(){
-
         Driver.getDriver().get(ConfigReader.getProperty("url"));
-
         ReusableMethods.scrollDown();
-
         waitFor(2);
-
         actions.moveToElement(us7HomePage._1urun).perform();
-
         ReusableMethods.waitFor(2);
-
         us7HomePage._1urunCompareButton.click();
-
         us7HomePage.boslugaBasma.click();
-
         actions.moveToElement(us7HomePage._2urun).perform();
-
         ReusableMethods.waitFor(2);
-
         us7HomePage._2urunCompareButton.click();
-
         us7HomePage.boslugaBasma.click();
-
         actions.moveToElement(us7HomePage._3urun).perform();
-
         ReusableMethods.waitFor(2);
-
         us7HomePage._3urunCompareButton.click();
-
         us7HomePage.boslugaBasma.click();
-
         actions.moveToElement(us7HomePage._4urun).perform();
-
         ReusableMethods.waitFor(2);
-
         us7HomePage._4urunCompareButton.click();
-
     }
-
-
 }

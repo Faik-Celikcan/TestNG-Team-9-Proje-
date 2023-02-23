@@ -5,8 +5,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import utilities.Driver;
 
-public class HubcomfyStorePage {
-    public HubcomfyStorePage() {
+public class US18StorePage {
+    public US18StorePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

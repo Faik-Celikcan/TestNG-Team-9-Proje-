@@ -5,8 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class HubcomfyMyAccount {
-    public HubcomfyMyAccount() {
+public class US18MyAccount {
+    public US18MyAccount() {
 
             PageFactory.initElements(Driver.getDriver(), this);
         }
